@@ -13,6 +13,9 @@
 		164214662789A31200062E5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 164214642789A31200062E5E /* Main.storyboard */; };
 		164214682789A31300062E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164214672789A31300062E5E /* Assets.xcassets */; };
 		1642146B2789A31300062E5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 164214692789A31300062E5E /* LaunchScreen.storyboard */; };
+		16D37FAF278AE0BE0095AB43 /* APImanager .swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D37FAE278AE0BE0095AB43 /* APImanager .swift */; };
+		16D37FB1278AE0F80095AB43 /* ImdbModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D37FB0278AE0F80095AB43 /* ImdbModel.swift */; };
+		D6839D5AB93C1C9BD186DFAE /* Pods_M18Homework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4DBED4E3E9104222A5B952 /* Pods_M18Homework.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,11 @@
 		164214672789A31300062E5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1642146A2789A31300062E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1642146C2789A31300062E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16D37FAE278AE0BE0095AB43 /* APImanager .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APImanager .swift"; sourceTree = "<group>"; };
+		16D37FB0278AE0F80095AB43 /* ImdbModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImdbModel.swift; sourceTree = "<group>"; };
+		2290FEE9D90E7D43A7E4F5FD /* Pods-M18Homework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M18Homework.release.xcconfig"; path = "Target Support Files/Pods-M18Homework/Pods-M18Homework.release.xcconfig"; sourceTree = "<group>"; };
+		38536664796A23AFB85938F9 /* Pods-M18Homework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M18Homework.debug.xcconfig"; path = "Target Support Files/Pods-M18Homework/Pods-M18Homework.debug.xcconfig"; sourceTree = "<group>"; };
+		DE4DBED4E3E9104222A5B952 /* Pods_M18Homework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M18Homework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6839D5AB93C1C9BD186DFAE /* Pods_M18Homework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,8 @@
 			children = (
 				1642145D2789A31200062E5E /* M18Homework */,
 				1642145C2789A31200062E5E /* Products */,
+				563E39B9B11D1766B5349E15 /* Pods */,
+				9453AFB41204F9343B8DF5A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +67,7 @@
 		1642145D2789A31200062E5E /* M18Homework */ = {
 			isa = PBXGroup;
 			children = (
+				16D37FAB278AD67D0095AB43 /* API */,
 				1642145E2789A31200062E5E /* AppDelegate.swift */,
 				164214602789A31200062E5E /* SceneDelegate.swift */,
 				164214622789A31200062E5E /* ViewController.swift */,
@@ -67,6 +79,48 @@
 			path = M18Homework;
 			sourceTree = "<group>";
 		};
+		16D37FAB278AD67D0095AB43 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				16D37FAC278ADA000095AB43 /* Models */,
+				16D37FAD278ADA080095AB43 /* Services */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		16D37FAC278ADA000095AB43 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				16D37FB0278AE0F80095AB43 /* ImdbModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		16D37FAD278ADA080095AB43 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				16D37FAE278AE0BE0095AB43 /* APImanager .swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		563E39B9B11D1766B5349E15 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38536664796A23AFB85938F9 /* Pods-M18Homework.debug.xcconfig */,
+				2290FEE9D90E7D43A7E4F5FD /* Pods-M18Homework.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9453AFB41204F9343B8DF5A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE4DBED4E3E9104222A5B952 /* Pods_M18Homework.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1642146F2789A31300062E5E /* Build configuration list for PBXNativeTarget "M18Homework" */;
 			buildPhases = (
+				FF7A97B2F748583F2E9BCB1F /* [CP] Check Pods Manifest.lock */,
 				164214572789A31200062E5E /* Sources */,
 				164214582789A31200062E5E /* Frameworks */,
 				164214592789A31200062E5E /* Resources */,
+				FF20742A4757393591CF5753 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +189,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FF20742A4757393591CF5753 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-M18Homework/Pods-M18Homework-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-M18Homework/Pods-M18Homework-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-M18Homework/Pods-M18Homework-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF7A97B2F748583F2E9BCB1F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-M18Homework-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		164214572789A31200062E5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				164214632789A31200062E5E /* ViewController.swift in Sources */,
+				16D37FAF278AE0BE0095AB43 /* APImanager .swift in Sources */,
 				1642145F2789A31200062E5E /* AppDelegate.swift in Sources */,
 				164214612789A31200062E5E /* SceneDelegate.swift in Sources */,
+				16D37FB1278AE0F80095AB43 /* ImdbModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +384,7 @@
 		};
 		164214702789A31300062E5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38536664796A23AFB85938F9 /* Pods-M18Homework.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -297,6 +398,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,12 +408,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		164214712789A31300062E5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2290FEE9D90E7D43A7E4F5FD /* Pods-M18Homework.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -325,6 +428,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,7 +438,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
