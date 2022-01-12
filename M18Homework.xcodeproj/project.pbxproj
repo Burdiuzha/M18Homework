@@ -13,6 +13,8 @@
 		164214662789A31200062E5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 164214642789A31200062E5E /* Main.storyboard */; };
 		164214682789A31300062E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164214672789A31300062E5E /* Assets.xcassets */; };
 		1642146B2789A31300062E5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 164214692789A31300062E5E /* LaunchScreen.storyboard */; };
+		1675266B278EDFC600A97C05 /* CellMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675266A278EDFC600A97C05 /* CellMovieModel.swift */; };
+		1675266D278EDFD600A97C05 /* CellMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675266C278EDFD600A97C05 /* CellMovie.swift */; };
 		16D37FAF278AE0BE0095AB43 /* APImanager .swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D37FAE278AE0BE0095AB43 /* APImanager .swift */; };
 		16D37FB1278AE0F80095AB43 /* ImdbModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D37FB0278AE0F80095AB43 /* ImdbModel.swift */; };
 		D6839D5AB93C1C9BD186DFAE /* Pods_M18Homework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4DBED4E3E9104222A5B952 /* Pods_M18Homework.framework */; };
@@ -27,6 +29,8 @@
 		164214672789A31300062E5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1642146A2789A31300062E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1642146C2789A31300062E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1675266A278EDFC600A97C05 /* CellMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellMovieModel.swift; sourceTree = "<group>"; };
+		1675266C278EDFD600A97C05 /* CellMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellMovie.swift; sourceTree = "<group>"; };
 		16D37FAE278AE0BE0095AB43 /* APImanager .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APImanager .swift"; sourceTree = "<group>"; };
 		16D37FB0278AE0F80095AB43 /* ImdbModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImdbModel.swift; sourceTree = "<group>"; };
 		2290FEE9D90E7D43A7E4F5FD /* Pods-M18Homework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M18Homework.release.xcconfig"; path = "Target Support Files/Pods-M18Homework/Pods-M18Homework.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,13 +74,31 @@
 				16D37FAB278AD67D0095AB43 /* API */,
 				1642145E2789A31200062E5E /* AppDelegate.swift */,
 				164214602789A31200062E5E /* SceneDelegate.swift */,
-				164214622789A31200062E5E /* ViewController.swift */,
+				16752668278EDF9300A97C05 /* MainScreen */,
 				164214642789A31200062E5E /* Main.storyboard */,
 				164214672789A31300062E5E /* Assets.xcassets */,
 				164214692789A31300062E5E /* LaunchScreen.storyboard */,
 				1642146C2789A31300062E5E /* Info.plist */,
 			);
 			path = M18Homework;
+			sourceTree = "<group>";
+		};
+		16752668278EDF9300A97C05 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				164214622789A31200062E5E /* ViewController.swift */,
+				16752669278EDF9C00A97C05 /* CellMovie */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		16752669278EDF9C00A97C05 /* CellMovie */ = {
+			isa = PBXGroup;
+			children = (
+				1675266A278EDFC600A97C05 /* CellMovieModel.swift */,
+				1675266C278EDFD600A97C05 /* CellMovie.swift */,
+			);
+			path = CellMovie;
 			sourceTree = "<group>";
 		};
 		16D37FAB278AD67D0095AB43 /* API */ = {
@@ -236,11 +258,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1675266B278EDFC600A97C05 /* CellMovieModel.swift in Sources */,
 				164214632789A31200062E5E /* ViewController.swift in Sources */,
 				16D37FAF278AE0BE0095AB43 /* APImanager .swift in Sources */,
 				1642145F2789A31200062E5E /* AppDelegate.swift in Sources */,
 				164214612789A31200062E5E /* SceneDelegate.swift in Sources */,
 				16D37FB1278AE0F80095AB43 /* ImdbModel.swift in Sources */,
+				1675266D278EDFD600A97C05 /* CellMovie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

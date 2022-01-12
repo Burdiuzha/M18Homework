@@ -12,9 +12,11 @@ class ViewController: UIViewController {
     
     var apiManeger = APImanager()
     
-    var result: [Result] = []
+    var resultsMain: [Result] = []
     
-    private let cellWithImageHeaderTitle = "СellWithImageHeaderTitle"
+    private let cellMovie = "CellMovie"
+    
+    private var model: [CellMovieProtocol] = []
     
     private lazy var uiSearchBar: UISearchBar = {
        let uiSearchBar = UISearchBar()
@@ -31,7 +33,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellWithImageHeaderTitle)
+        tableView.register(CellMovie.self, forCellReuseIdentifier: cellMovie)
         tableView.dataSource = self
         
         uiSearchBar.delegate = self
@@ -67,11 +69,15 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        result.count
+        resultsMain.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellMovie) as? CellMovie
+        print("model \(model)")
+        let viewModel = model[indexPath.row]
+        cell?.configure(viewModel as! CellMovieModel)
+        return cell ?? UITableViewCell()
     }
     
 }
@@ -79,13 +85,42 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        
         let text = uiSearchBar.text
-        //print("search text \(text)")
-        result = apiManeger.getImdbResults(searchTitle: text!)
-        print(result.count)
-        //print(result)
-        //print("search button")
-        tableView.reloadData()
+        
+        //DispatchQueue.main.async {
+
+        apiManeger.getImdbResults(
+            url: apiManeger.getImdbURL(searchTitle: text!) ,
+            completion: {
+                [self] results in
+                self.resultsMain = results
+                return
+            })
+        
+        
+        print("ResultMain \(resultsMain)")
+        
+        if resultsMain.count != 0 {
+            model = []
+            
+        for i in 0...(resultsMain.count-1) {
+            model.append(CellMovieModel(
+                title: resultsMain[i].title,
+                description: resultsMain[i].resultDescription,
+                image: UIImage()
+            )
+            )
+          }
+            
+        } else {
+            print("Массив пустой")
+        }
+        
+        //}
+            tableView.reloadData()
+        //print("Результат в виев контроллере \(resultsMain)")
     }
     
 }
