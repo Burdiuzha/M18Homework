@@ -6,6 +6,7 @@
 
 
 import Foundation
+import UIKit
 
 class APImanager {
     
@@ -17,6 +18,17 @@ class APImanager {
         print(urlFull)
  
         return url!
+    }
+    
+    func getImage(url: String) -> UIImage? {
+      guard
+        let urlIn = URL(string: url),
+        let data = try? Data(contentsOf: urlIn)
+        else {
+            print("Ошибка, не удалось загрузить изображение")
+            return nil
+        }
+        return UIImage(data: data)
     }
     
     func getImdbResults(url: URL, completion: @escaping (_ results: [Result]) -> Void ) {

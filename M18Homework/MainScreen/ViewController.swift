@@ -85,43 +85,33 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        
         let text = uiSearchBar.text
-        
-        //DispatchQueue.main.async {
-
-        apiManeger.getImdbResults(
+        self.apiManeger.getImdbResults(
             url: apiManeger.getImdbURL(searchTitle: text!) ,
             completion: {
                 [self] results in
-                self.resultsMain = results
-                return
+                DispatchQueue.main.async {
+                 self.resultsMain = results
+                  if resultsMain.count != 0 {
+                   model = []
+                    for i in 0...(resultsMain.count-1) {
+                     model.append(CellMovieModel(
+                                  title: resultsMain[i].title,
+                                  description: resultsMain[i].resultDescription,
+                                  image: apiManeger.getImage(url: resultsMain[i].image)
+                                  )
+                                  )
+                                 }
+                    } else {
+                        print("Массив пустой")
+                    }
+                    //print("dispatchGroup.notify")
+                    //print(model)
+                    tableView.reloadData()
+                }
             })
-        
-        
-        print("ResultMain \(resultsMain)")
-        
-        if resultsMain.count != 0 {
-            model = []
-            
-        for i in 0...(resultsMain.count-1) {
-            model.append(CellMovieModel(
-                title: resultsMain[i].title,
-                description: resultsMain[i].resultDescription,
-                image: UIImage()
-            )
-            )
-          }
-            
-        } else {
-            print("Массив пустой")
         }
-        
-        //}
-            tableView.reloadData()
-        //print("Результат в виев контроллере \(resultsMain)")
     }
     
-}
+
 
