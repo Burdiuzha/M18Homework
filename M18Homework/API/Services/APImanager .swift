@@ -8,7 +8,13 @@
 import Foundation
 import UIKit
 
-class APImanager {
+protocol APImanagerProtocol {
+    func getImdbURL (searchTitle: String) -> URL
+    func getImage(url: String) -> UIImage?
+    func getImdbResults(url: URL, completion: @escaping (_ results: [Result]) -> Void )
+}
+
+class APImanager: APImanagerProtocol {
     
     func getImdbURL (searchTitle: String) -> URL {
         let urlMainPart = "https://imdb-api.com/API/Search/k_il0e4iky/"
@@ -32,7 +38,7 @@ class APImanager {
     }
     
     func getImdbResults(url: URL, completion: @escaping (_ results: [Result]) -> Void ) {
-        print("getImdbResults")
+        //print("getImdbResults")
         let request = URLRequest(url: url)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data, let imdb = try? JSONDecoder().decode(Imdb.self, from: data) {

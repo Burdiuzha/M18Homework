@@ -27,6 +27,7 @@ class CellMovie: UITableViewCell {
     
     private lazy var image: UIImageView = {
         let image = UIImageView()
+        image.contentMode = .scaleAspectFit
         image.layer.cornerRadius = 10
         image.clipsToBounds = true
         return image
@@ -90,7 +91,7 @@ class CellMovie: UITableViewCell {
         
     }
     
-    func configure(_ viewModel: CellMovieModel ) {
+    func configure(_ viewModel: CellMovieModel) {
         title.text = viewModel.title
         descriptionMovie.text = viewModel.description
         image.image = viewModel.image

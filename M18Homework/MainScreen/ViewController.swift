@@ -25,8 +25,15 @@ class ViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: CGRect.zero, style: .grouped)
+        //tableView.headerView(forSection: 2)
         tableView.separatorStyle = .singleLine
         return tableView
+    }()
+    
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        //let view = UIActivityIndicatorView(frame: CGRect(x: 220, y: 220, width: 140, height: 140))
+        let view = UIActivityIndicatorView()
+        return view
     }()
 
     override func viewDidLoad() {
@@ -44,6 +51,7 @@ class ViewController: UIViewController {
     
     private func setupViews() {
         view.addSubview(uiSearchBar)
+        view.addSubview(activityIndicator)
         view.addSubview(tableView)
     }
     
@@ -56,6 +64,10 @@ class ViewController: UIViewController {
             maker.left.equalToSuperview()
             maker.right.equalToSuperview()
         }
+        
+//        activityIndicator.snp.makeConstraints { maker in
+//            maker.top.equalTo(uiSearchBar.snp.bottom).inset(100)
+//        }
         
         tableView.snp.makeConstraints { maker in
             maker.left.equalToSuperview()
@@ -105,8 +117,6 @@ extension ViewController: UISearchBarDelegate {
                     } else {
                         print("Массив пустой")
                     }
-                    //print("dispatchGroup.notify")
-                    //print(model)
                     tableView.reloadData()
                 }
             })
