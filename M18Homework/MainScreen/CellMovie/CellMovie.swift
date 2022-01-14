@@ -94,7 +94,7 @@ class CellMovie: UITableViewCell {
     func configure(_ viewModel: CellMovieModel) {
         title.text = viewModel.title
         descriptionMovie.text = viewModel.description
-        image.image = viewModel.image
+        image.af.setImage(withURL: viewModel.image!)
     }
     
 }

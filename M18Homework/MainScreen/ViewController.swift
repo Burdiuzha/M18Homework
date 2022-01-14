@@ -111,7 +111,7 @@ extension ViewController: UISearchBarDelegate {
                     for i in 0...(resultsMain.count-1) {
                      model.append(CellMovieModel(title: resultsMain[i].title,
                                                  description: resultsMain[i].resultDescription,
-                                                 image: apiManegerAF.getImage(url: resultsMain[i].image)
+                                                 image: URL(string: resultsMain[i].image)
                                   )
                                   )
                                  }

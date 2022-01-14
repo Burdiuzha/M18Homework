@@ -11,11 +11,11 @@ import UIKit
 protocol CellMovieProtocol {
     var title: String? { get set }
     var description: String? { get set }
-    var image: UIImage? { get set }
+    var image: URL? { get set }
 }
 
 struct CellMovieModel: CellMovieProtocol {
     var title: String?
     var description: String?
-    var image: UIImage?
+    var image: URL?
 }
