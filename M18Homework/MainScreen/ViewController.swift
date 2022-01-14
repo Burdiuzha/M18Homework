@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     
     var apiManeger = APImanager()
     
+    var apiManegerAF = APImanagerAF()
+    
     var resultsMain: [Result] = []
     
     private let cellMovie = "CellMovie"
@@ -97,20 +99,22 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        apiManegerAF.getImage(url: "fdsgs")
+        
         let text = uiSearchBar.text
+        uiSearchBar.resignFirstResponder()
         self.apiManeger.getImdbResults(
             url: apiManeger.getImdbURL(searchTitle: text!) ,
-            completion: {
-                [self] results in
+            completion: { [self] results in
                 DispatchQueue.main.async {
                  self.resultsMain = results
                   if resultsMain.count != 0 {
                    model = []
                     for i in 0...(resultsMain.count-1) {
-                     model.append(CellMovieModel(
-                                  title: resultsMain[i].title,
-                                  description: resultsMain[i].resultDescription,
-                                  image: apiManeger.getImage(url: resultsMain[i].image)
+                     model.append(CellMovieModel(title: resultsMain[i].title,
+                                                 description: resultsMain[i].resultDescription,
+                                                 image: apiManegerAF.getImage(url: resultsMain[i].image)
                                   )
                                   )
                                  }

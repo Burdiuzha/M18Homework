@@ -7,5 +7,7 @@ target 'M18Homework' do
 
   # Pods for M18Homework
 pod 'SnapKit', '~> 5.0.0'
+pod 'Alamofire', '~> 5.5'
+pod 'AlamofireImage', '~> 4.1'
 
 end
