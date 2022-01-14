@@ -99,9 +99,6 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        apiManegerAF.getImage(url: "fdsgs")
-        
         let text = uiSearchBar.text
         uiSearchBar.resignFirstResponder()
         self.apiManeger.getImdbResults(
